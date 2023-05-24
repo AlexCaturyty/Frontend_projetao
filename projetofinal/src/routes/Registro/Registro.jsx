@@ -1,48 +1,89 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styles from './Registro.css'
 
-function Registro() {
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-  
-    const handleUsernameChange = (event) => {
-      setUsername(event.target.value);
+function CadastroForm() {
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+
+  const handleChangeNome = (event) => {
+    const valor = event.target.value;
+    setNome(valor);
+    console.log("Nome:", valor);
+  };
+
+  const handleChangeEmail = (event) => {
+    const valor = event.target.value;
+    setEmail(valor);
+    console.log("Email:", valor);
+  };
+
+  const handleChangeSenha = (event) => {
+    const valor = event.target.value;
+    setSenha(valor);
+    console.log("Senha:", valor);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = {
+      nome: nome,
+      email: email,
+      senha: senha
     };
-  
-    const handleEmailChange = (event) => {
-      setEmail(event.target.value);
-    };
-  
-    const handlePasswordChange = (event) => {
-      setPassword(event.target.value);
-    };
-  
-    const handleSubmit = (event) => {
-      event.preventDefault();
-      // lógica para registrar o usuário com o servidor de backend
-    };
-  
-    return (
-      <div className="container">
-        <form onSubmit={handleSubmit}>
-          <label>
-            Nome:
-            <input type="text" value={username} onChange={handleUsernameChange} />
-          </label>
-          <label>
-            Email:
-            <input type="email" value={email} onChange={handleEmailChange} />
-          </label>
-          <label>
-            Senha:
-            <input type="password" value={password} onChange={handlePasswordChange} />
-          </label>
-          <div id='rota'><Link to='/home'>Registro</Link></div>
-        </form>
-      </div>
-    );
-  }
-  
-  export default Registro;
+
+    try {
+      const response = await fetch("http://localhost:8080/usuarios", {
+        method: "POST",
+        headers: {
+          "Accept" : "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Dados enviados com sucesso!', data);
+        limparCampos();
+        // Faça o tratamento necessário após o envio dos dados
+      } else {
+        console.log('Ocorreu um erro ao enviar os dados.');
+        // Trate o erro adequadamente
+      }
+    } catch (error) {
+      console.log('Ocorreu um erro na requisição:', error);
+      // Trate o erro adequadamente
+    }
+  };
+
+  const limparCampos = () => {
+    setNome('');
+    setEmail('');
+    setSenha('');
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Nome:
+        <input type="text" value={nome} onChange={handleChangeNome} />
+      </label>
+      <br />
+      <label>
+        Email:
+        <input type="email" value={email} onChange={handleChangeEmail} />
+      </label>
+      <br />
+      <label>
+        Senha:
+        <input type="password" value={senha} onChange={handleChangeSenha} />
+      </label>
+      <br />
+      <button type="submit">Enviar</button>
+    </form>
+  );
+}
+
+export default CadastroForm;
