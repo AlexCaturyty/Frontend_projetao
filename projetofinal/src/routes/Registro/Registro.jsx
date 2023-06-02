@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './Registro.css'
 
-function CadastroForm() {
+function Registro() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
@@ -83,7 +83,11 @@ function CadastroForm() {
       <br />
       <button type="submit">Enviar</button>
     </form>
+
+   
   );
+
+  
 }
 
-export default CadastroForm;
+export default Registro;
