@@ -60,25 +60,13 @@ form {
   
   }
   
-  button[type="passwordIcon"]{
-      height: 20px;
-      width: 20px;
-      color: #32CD32;
-      background: none;
-      border: none;
-      right: 10px;
-      outline: none;
-  }
-  
-  #passwordIcon:focus {
-      outline: none;
-    }
     
   
   button[type="submit"]:hover,
   button[type="button"]:hover {
     background-color: #ffffff; 
     color: #32CD32; 
+    
   
   }
   

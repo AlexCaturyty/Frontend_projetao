@@ -66,6 +66,7 @@ function Registro() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <label><b>Registro</b></label>
       <label>
         Nome:
         <input type="text" value={nome} onChange={handleChangeNome} />

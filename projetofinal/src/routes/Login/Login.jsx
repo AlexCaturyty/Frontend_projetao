@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import styles from "./Login.css";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -66,7 +65,9 @@ function Login() {
           />
         </div>
       </label>
+      
       <button type="submit">Login</button>
+      
       <div id="rota">
         <Link to="/registro">Registro</Link>
       </div>

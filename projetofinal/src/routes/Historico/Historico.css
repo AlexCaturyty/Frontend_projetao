@@ -17,7 +17,7 @@
   }
   
   li {
-    background-color: #ffffff;
+    background-color: #32cd32;
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -31,15 +31,15 @@
     border-radius: 5px;
     font-size: 14px;
     font-weight: bold;
-    color: #ffffff;
-    background-color: #32CD32;
+    color: #32cd32;
+    background-color: #ffffff;
     cursor: pointer;
     transition: all 0.3s ease;
   }
   
   li button:hover {
-    background-color: #ffffff;
-    color: #32CD32;
+    background-color: #32cd32;
+    color: #ffffff;
   }
   
   p {

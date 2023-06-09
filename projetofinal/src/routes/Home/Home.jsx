@@ -47,8 +47,7 @@ function Apostas() {
                     Selecione o tipo de aposta:
                     <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
                         <option value="vencedor">Vencedor</option>
-                        <option value="placar">Placar</option>
-                        <option value="total">Total</option>
+                        
                     </select>
                 </label>
                 <label>
@@ -69,11 +68,11 @@ function Apostas() {
                 </label>
 
                 <button type="submit">Adicionar Aposta</button>
-                <Link to={"/historico"}>Ver Histórico de Apostas</Link>
+                <Link to="/historico">Ver Histórico de Apostas</Link>
+                <Link to="/conta">Minha Conta</Link>
             </form>
         </div>
     );
 }
 
 export default Apostas;
-

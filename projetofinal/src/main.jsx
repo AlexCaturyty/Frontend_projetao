@@ -9,6 +9,7 @@ import Home from "./routes/Home/Home.jsx"
 import Login from "./routes/Login/Login.jsx"
 import Registro from './routes/Registro/Registro.jsx'
 import Historico from './routes/Historico/Historico.jsx'
+import Conta from './routes/Conta/Conta.jsx'
 
 
 
@@ -45,6 +46,12 @@ const router = createBrowserRouter([
         path: "historico",
         element: <Historico/>
       },
+      {
+        path: "conta",
+        element: <Conta/>
+      },
+      
+      
       ]
     
     },
