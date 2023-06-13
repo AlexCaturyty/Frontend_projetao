@@ -10,6 +10,9 @@ import Login from "./routes/Login/Login.jsx"
 import Registro from './routes/Registro/Registro.jsx'
 import Historico from './routes/Historico/Historico.jsx'
 import Conta from './routes/Conta/Conta.jsx'
+import DeletarConta from './routes/DeletarConta/DeletarConta.jsx'
+import EditarConta from './routes/EditarConta/EditarConta.jsx'
+
 
 
 
@@ -45,6 +48,14 @@ const router = createBrowserRouter([
       {
         path: "historico",
         element: <Historico/>
+      },
+      {
+        path: "deletarconta",
+        element: <DeletarConta/>
+      },
+      {
+        path: "editarconta",
+        element: <EditarConta/>
       },
       {
         path: "conta",

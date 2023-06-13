@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import styles from './Login.css'
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -68,7 +69,7 @@ function Login() {
       
       <button type="submit">Login</button>
       
-      <div id="rota">
+      <div className="rota">
         <Link to="/registro">Registro</Link>
       </div>
     </form>

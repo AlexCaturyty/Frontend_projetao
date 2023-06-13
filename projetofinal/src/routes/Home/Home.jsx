@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Home.css'
+import Home from './Home.css'
 
 function Apostas() {
     const [apostas, setApostas] = useState([]);
